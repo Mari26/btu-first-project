@@ -12,6 +12,8 @@ import CustomButton from './CustomButton';
 import Article from './Article';
 import List from './List';
 import Status from './Status';
+import Profile from './Profile';
+import Button from './Button';
 
 
 function App() {
@@ -20,6 +22,7 @@ const arr=["Apple", "Banana", "Orange"];
 let txt =  "Hello React"
 let isStudent = true;
 let agee = 18;
+let PrL=["React", "Angular", "Vue"];
 
   return (
 <div>
@@ -37,6 +40,11 @@ let agee = 18;
   </p>
 
 
+{PrL.includes("React")? <p>React ნაპოვნია</p>:<p>React ვერ მოიძებნა</p>}
+
+
+
+
 <Greeting/>
 <First/>
 <User name="ნინო"  />
@@ -49,6 +57,8 @@ let agee = 18;
 <Article title="სათაური" txt="დავწეროთ რაიმე ტექსტი" />
 <List items={["React", "JavaScript", "HTML"]}/>
 <Status online/>
+<Profile name="mari" isAdmin={true}/>
+<Button primary={true}/>
 
 
 
