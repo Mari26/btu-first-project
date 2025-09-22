@@ -12,21 +12,30 @@ import CustomButton from './CustomButton';
 import Article from './Article';
 import List from './List';
 import Status from './Status';
-import Profile from './Profile';
-import Button from './Button';
+// import Profile from './Profile';
+// import Button from './Button';
+// import Profile from './components/Profile';
+// import Modal from './components/Modal';
+import Card from './lesson-10/card';
+import Listt from './lesson-10/Listt';
+import StatusMessage from './lesson-10/StatusMessage';
+import ColorButton from './lesson-10/ColorButton';
+import Alert from './lesson-10/Alert';
+
+
 
 
 function App() {
-let age = 34;
-const arr=["Apple", "Banana", "Orange"];
-let txt =  "Hello React"
-let isStudent = true;
-let agee = 18;
-let PrL=["React", "Angular", "Vue"];
-
+// let age = 34;
+// const arr=["Apple", "Banana", "Orange"];
+// let txt =  "Hello React"
+// let isStudent = true;
+// let agee = 18;
+// let PrL=["React", "Angular", "Vue"];
+ const fruits = ['ვაშლი', 'მსხალი', 'ატამი', 'ბანანი'];
   return (
 <div>
- <h1>"hello React!"</h1>  
+ {/* <h1>"hello React!"</h1>  
  <p>ჩემი ასაკი არის {age}</p>  
 <h2 style={{color:"blue"}}>{txt}</h2>
 <div>
@@ -58,7 +67,28 @@ let PrL=["React", "Angular", "Vue"];
 <List items={["React", "JavaScript", "HTML"]}/>
 <Status online/>
 <Profile name="mari" isAdmin={true}/>
-<Button primary={true}/>
+<Button primary={true}/> */}
+
+{/* <Profile isAdmin={false}/>
+
+<Modal header="title" footer="footer" >
+  <p>text</p>
+  
+   </Modal> */}
+
+{/* //დაწერე კომპონენტი Card, რომელიც იღებს childrenს და აჩვენებს მას შიგნით. */}
+
+<Card> 
+   <h2>სათაური</h2>
+  <p>ეს არის ტექსტი</p>
+</Card>
+
+<Listt items={fruits} />
+<StatusMessage isOnline={true}/>
+<ColorButton label="წაშლა" color="red" />
+ <Alert type="success">
+        <strong>შესანიშნავია!</strong> თქვენი პროფილი წარმატებით განახლდა.
+      </Alert>
 
 
 
