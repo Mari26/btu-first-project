@@ -16,12 +16,13 @@ import Status from './Status';
 // import Button from './Button';
 // import Profile from './components/Profile';
 // import Modal from './components/Modal';
-import Card from './lesson-10/card';
-import Listt from './lesson-10/Listt';
-import StatusMessage from './lesson-10/StatusMessage';
-import ColorButton from './lesson-10/ColorButton';
-import Alert from './lesson-10/Alert';
-
+// import Card from './lesson-10/card';
+// import Listt from './lesson-10/Listt';
+// import StatusMessage from './lesson-10/StatusMessage';
+// import ColorButton from './lesson-10/ColorButton';
+// import Alert from './lesson-10/Alert';
+// import State from './component-2/State';
+import Count from './lesson-11/Count';
 
 
 
@@ -32,7 +33,7 @@ function App() {
 // let isStudent = true;
 // let agee = 18;
 // let PrL=["React", "Angular", "Vue"];
- const fruits = ['ვაშლი', 'მსხალი', 'ატამი', 'ბანანი'];
+//  const fruits = ['ვაშლი', 'მსხალი', 'ატამი', 'ბანანი'];
   return (
 <div>
  {/* <h1>"hello React!"</h1>  
@@ -77,7 +78,7 @@ function App() {
    </Modal> */}
 
 {/* //დაწერე კომპონენტი Card, რომელიც იღებს childrenს და აჩვენებს მას შიგნით. */}
-
+{/* 
 <Card> 
    <h2>სათაური</h2>
   <p>ეს არის ტექსტი</p>
@@ -88,9 +89,9 @@ function App() {
 <ColorButton label="წაშლა" color="red" />
  <Alert type="success">
         <strong>შესანიშნავია!</strong> თქვენი პროფილი წარმატებით განახლდა.
-      </Alert>
-
-
+      </Alert> */}
+{/* <State /> */}
+<Count/>
 
 </div>
     
