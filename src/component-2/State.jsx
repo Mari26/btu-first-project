@@ -10,9 +10,9 @@ const [isclicked,setIsclicked]=useState(false);
 
 
 const click  = () =>{
-// setState("sdasd");
-// state ==5?setState("sdasd"):setState(5);
-// setBulean(!boolean)
+setState("sdasd");
+state ==5?setState("sdasd"):setState(5);
+setBulean(!boolean)
 setInfo(info.filter((item)=>{
     return item.id%2==0;
 }))

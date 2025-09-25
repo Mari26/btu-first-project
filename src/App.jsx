@@ -23,6 +23,8 @@ import Status from './Status';
 // import Alert from './lesson-10/Alert';
 // import State from './component-2/State';
 import Count from './lesson-11/Count';
+import Divstyle from './lesson-11/Divstyle';
+import Inputstyle from './lesson-11/Inputstyle';
 
 
 
@@ -92,6 +94,8 @@ function App() {
       </Alert> */}
 {/* <State /> */}
 <Count/>
+<Divstyle/>
+<Inputstyle/>
 
 </div>
     
