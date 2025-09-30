@@ -1,17 +1,17 @@
 
 import './App.css'
 import Greeting from './Greeting';
-import First from './First';
-import User from './User';
-import Product from './Product';
-import Header from './Header';
-import Content from './Content';
-import Footer from './Footer';
-import Avatar from './Avatar';
-import CustomButton from './CustomButton';
-import Article from './Article';
-import List from './List';
-import Status from './Status';
+// import First from './First';
+// import User from './User';
+// import Product from './Product';
+// import Header from './Header';
+// import Content from './Content';
+// import Footer from './Footer';
+// import Avatar from './Avatar';
+// import CustomButton from './CustomButton';
+// import Article from './Article';
+// import List from './List';
+// import Status from './Status';
 // import Profile from './Profile';
 // import Button from './Button';
 // import Profile from './components/Profile';
@@ -22,11 +22,15 @@ import Status from './Status';
 // import ColorButton from './lesson-10/ColorButton';
 // import Alert from './lesson-10/Alert';
 // import State from './component-2/State';
-import Count from './lesson-11/Count';
-import Divstyle from './lesson-11/Divstyle';
-import Inputstyle from './lesson-11/Inputstyle';
+// import Count from './lesson-11/Count';
+// import Divstyle from './lesson-11/Divstyle';
+// import Inputstyle from './lesson-11/Inputstyle';
 import ClickCounter from './lesson-11/ClickCounter';
-
+import Timer from './lesson-12/Timer';
+import UserList from './lesson-12/UserList';
+import FocusComponent from './lesson-12/FocusComponent';
+import TrafficLight from './lesson-12/TrafficLight';
+import ScrollPosition from './lesson-12/ScrollPosition';
 
 function App() {
 // let age = 34;
@@ -93,16 +97,28 @@ function App() {
         <strong>შესანიშნავია!</strong> თქვენი პროფილი წარმატებით განახლდა.
       </Alert> */}
 {/* <State /> */}
-<Count/>
+{/* <Count/>
 <Divstyle/>
-<Inputstyle/>
+<Inputstyle/> */}
  <div>
       <ClickCounter />
     </div>
 
 
+<Timer/>
+
+<UserList/>
+ <FocusComponent />
+  <TrafficLight />
+<ScrollPosition/>
+
+
+
+
+
 </div>
-    
+  
+  
   )
 }
 

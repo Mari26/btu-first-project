@@ -22,4 +22,71 @@ p{
 
 ul li{
   list-style: none;
+    
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li strong {
+  font-size: 1.2em;
+  color: #333;
+}
+
+li p {
+  margin: 5px 0 0;
+  color: #777;
+}
+
+
+.traffic-light-container {
+  text-align: center;
+}
+
+.traffic-light {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #333;
+}
+
+.light {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+
+
+.light.red {
+  background-color: red;
+}
+
+.light.yellow {
+  background-color: yellow;
+}
+
+.light.green {
+  background-color: green;
+}
+
+
+.light.active {
+  opacity: 1;
+  box-shadow: 0 0 20px 5px currentColor; 
 }
