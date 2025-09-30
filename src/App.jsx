@@ -25,7 +25,7 @@ import Status from './Status';
 import Count from './lesson-11/Count';
 import Divstyle from './lesson-11/Divstyle';
 import Inputstyle from './lesson-11/Inputstyle';
-
+import ClickCounter from './lesson-11/ClickCounter';
 
 
 function App() {
@@ -96,6 +96,10 @@ function App() {
 <Count/>
 <Divstyle/>
 <Inputstyle/>
+ <div>
+      <ClickCounter />
+    </div>
+
 
 </div>
     
