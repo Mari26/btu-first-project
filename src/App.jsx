@@ -13,6 +13,9 @@ import PhotoDetailPage from './lesson-13/PhotoDetailPage';
 import ProtectedRoute from './lesson-13/ProtectedRoute';
 import DashboardPage from './lesson-13/DashboardPage ';
 import LoginPage from './lesson-13/LoginPage';
+import ProfileInfo from './lesson-13/ProfileInfo';
+import ProfilePage from './lesson-13/ProfilePage ';
+import ProfileSettings from './lesson-13/ProfileSettings';
 // import First from './First';
 // import User from './User';
 // import Product from './Product';
@@ -149,6 +152,10 @@ const [isAuthenticated] = useState(false);
           <li>
             <Link to="/Login">LoginPage</Link>
           </li>
+          <li>
+            <Link to="/profile">profile</Link>
+          </li>
+          
         </ul>
       </nav>
 
@@ -171,6 +178,9 @@ const [isAuthenticated] = useState(false);
             </ProtectedRoute>
           }
         />
+         <Route path="/profile" element={<ProfilePage />}/>
+         <Route path="info" element={<ProfileInfo />} />
+         <Route path="settings" element={<ProfileSettings />} />
       </Routes>
 
 
