@@ -1,6 +1,18 @@
 
 import './App.css'
+import { Routes, Route, Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import Greeting from './Greeting';
+import Home from './lesson-13/Home';
+import About from './lesson-13/About';
+import Contact from './lesson-13/Contact';
+import ProductPage from './lesson-13/ProductPage';
+import NotFoundPage from './lesson-13/NotFoundPage';
+import PhotoListPage from './lesson-13/PhotoListPage';
+import PhotoDetailPage from './lesson-13/PhotoDetailPage';
+import ProtectedRoute from './lesson-13/ProtectedRoute';
+import DashboardPage from './lesson-13/DashboardPage ';
+import LoginPage from './lesson-13/LoginPage';
 // import First from './First';
 // import User from './User';
 // import Product from './Product';
@@ -25,12 +37,13 @@ import Greeting from './Greeting';
 // import Count from './lesson-11/Count';
 // import Divstyle from './lesson-11/Divstyle';
 // import Inputstyle from './lesson-11/Inputstyle';
-import ClickCounter from './lesson-11/ClickCounter';
-import Timer from './lesson-12/Timer';
-import UserList from './lesson-12/UserList';
-import FocusComponent from './lesson-12/FocusComponent';
-import TrafficLight from './lesson-12/TrafficLight';
-import ScrollPosition from './lesson-12/ScrollPosition';
+// import ClickCounter from './lesson-11/ClickCounter';
+// import Timer from './lesson-12/Timer';
+// import UserList from './lesson-12/UserList';
+// import FocusComponent from './lesson-12/FocusComponent';
+// import TrafficLight from './lesson-12/TrafficLight';
+// import ScrollPosition from './lesson-12/ScrollPosition';
+// import Statesto from './component-2/Satesto';
 
 function App() {
 // let age = 34;
@@ -40,6 +53,7 @@ function App() {
 // let agee = 18;
 // let PrL=["React", "Angular", "Vue"];
 //  const fruits = ['ვაშლი', 'მსხალი', 'ატამი', 'ბანანი'];
+const [isAuthenticated] = useState(false);
   return (
 <div>
  {/* <h1>"hello React!"</h1>  
@@ -100,7 +114,7 @@ function App() {
 {/* <Count/>
 <Divstyle/>
 <Inputstyle/> */}
- <div>
+ {/* <div>
       <ClickCounter />
     </div>
 
@@ -111,8 +125,53 @@ function App() {
  <FocusComponent />
   <TrafficLight />
 <ScrollPosition/>
+<Statesto/> */}
+ <nav >
+        <ul style={{display:"flex", justifycontent: "spacearound"}}>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/products/1">Product</Link>
+          </li>
+          <li>
+            <Link to="/PhotoListPage">PhotoListPage</Link>
+          </li>
+          <li>
+            <Link to="/dashboard">DashboardPage</Link>
+          </li>
+          <li>
+            <Link to="/Login">LoginPage</Link>
+          </li>
+        </ul>
+      </nav>
 
+<hr/>
 
+  <Routes>
+        <Route path="/" element={<Home/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path='/products/:id' element={<ProductPage />}/>
+        <Route path="*" element={<NotFoundPage />} />
+        <Route path="/PhotoListPage" element={<PhotoListPage />} />
+        <Route path="/photos/:id" element={<PhotoDetailPage />} />
+         <Route path="/login" element={<LoginPage />} />
+          <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute isAuthenticated={isAuthenticated}>
+              <DashboardPage />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
 
 
 
