@@ -1,21 +1,25 @@
 
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom';
-import React, { useState } from 'react';
-import Greeting from './Greeting';
-import Home from './lesson-13/Home';
-import About from './lesson-13/About';
-import Contact from './lesson-13/Contact';
-import ProductPage from './lesson-13/ProductPage';
-import NotFoundPage from './lesson-13/NotFoundPage';
-import PhotoListPage from './lesson-13/PhotoListPage';
-import PhotoDetailPage from './lesson-13/PhotoDetailPage';
-import ProtectedRoute from './lesson-13/ProtectedRoute';
-import DashboardPage from './lesson-13/DashboardPage ';
-import LoginPage from './lesson-13/LoginPage';
-import ProfileInfo from './lesson-13/ProfileInfo';
-import ProfilePage from './lesson-13/ProfilePage ';
-import ProfileSettings from './lesson-13/ProfileSettings';
+import UserList from './lesson-14/UserList';
+import UserDetails from './lesson-14/UserDetails';
+import AddUser from './lesson-14/AddUser';
+import UserEdit from './lesson-14/UserEdit';
+// import React, { useState } from 'react';
+// import Greeting from './Greeting';
+// import Home from './lesson-13/Home';
+// import About from './lesson-13/About';
+// import Contact from './lesson-13/Contact';
+// import ProductPage from './lesson-13/ProductPage';
+// import NotFoundPage from './lesson-13/NotFoundPage';
+// import PhotoListPage from './lesson-13/PhotoListPage';
+// import PhotoDetailPage from './lesson-13/PhotoDetailPage';
+// import ProtectedRoute from './lesson-13/ProtectedRoute';
+// import DashboardPage from './lesson-13/DashboardPage ';
+// import LoginPage from './lesson-13/LoginPage';
+// import ProfileInfo from './lesson-13/ProfileInfo';
+// import ProfilePage from './lesson-13/ProfilePage ';
+// import ProfileSettings from './lesson-13/ProfileSettings';
 // import First from './First';
 // import User from './User';
 // import Product from './Product';
@@ -56,7 +60,7 @@ function App() {
 // let agee = 18;
 // let PrL=["React", "Angular", "Vue"];
 //  const fruits = ['ვაშლი', 'მსხალი', 'ატამი', 'ბანანი'];
-const [isAuthenticated] = useState(false);
+// const [isAuthenticated] = useState(false);
   return (
 <div>
  {/* <h1>"hello React!"</h1>  
@@ -129,7 +133,7 @@ const [isAuthenticated] = useState(false);
   <TrafficLight />
 <ScrollPosition/>
 <Statesto/> */}
- <nav >
+ {/* <nav >
         <ul style={{display:"flex", justifycontent: "spacearound"}}>
           <li>
             <Link to="/">Home</Link>
@@ -181,9 +185,19 @@ const [isAuthenticated] = useState(false);
          <Route path="/profile" element={<ProfilePage />}/>
          <Route path="info" element={<ProfileInfo />} />
          <Route path="settings" element={<ProfileSettings />} />
-      </Routes>
-
-
+      </Routes> */}
+<nav>
+  <Link to="/">მთავარი| </Link>
+  <Link to="/users"> მომხმარებლები |</Link>
+  <Link to="/add-user"> ახალისდამატება</Link>
+</nav>
+<Routes>
+  <Route path='/users' element={<UserList/>}/>
+  <Route path='/users/:id' element={<UserDetails/>}/>
+  <Route path='/' element={<h1>მთავარი გვერდი</h1>}/>
+  <Route path='add-user' element={<AddUser/>}/>
+  <Route path="/users/:id/edit" element={<UserEdit />} /> 
+</Routes>
 
 </div>
   
