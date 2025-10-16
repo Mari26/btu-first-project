@@ -5,6 +5,7 @@ import UserList from './lesson-14/UserList';
 import UserDetails from './lesson-14/UserDetails';
 import AddUser from './lesson-14/AddUser';
 import UserEdit from './lesson-14/UserEdit';
+import Test from './lesson-14/Test';
 // import React, { useState } from 'react';
 // import Greeting from './Greeting';
 // import Home from './lesson-13/Home';
@@ -189,7 +190,8 @@ function App() {
 <nav>
   <Link to="/">მთავარი| </Link>
   <Link to="/users"> მომხმარებლები |</Link>
-  <Link to="/add-user"> ახალისდამატება</Link>
+  <Link to="/add-user"> ახალისდამატება </Link>
+  <Link to="/Test"> |satesto</Link>
 </nav>
 <Routes>
   <Route path='/users' element={<UserList/>}/>
@@ -197,6 +199,7 @@ function App() {
   <Route path='/' element={<h1>მთავარი გვერდი</h1>}/>
   <Route path='add-user' element={<AddUser/>}/>
   <Route path="/users/:id/edit" element={<UserEdit />} /> 
+  <Route path='/Test' element={<Test/>}/>
 </Routes>
 
 </div>
