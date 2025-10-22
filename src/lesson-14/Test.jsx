@@ -10,6 +10,26 @@ const [tests,setTests]=useState(
     ]
 );
 const [newtests,setNewtests]=useState('');
+const [editid,setEditid]=useState(null);
+const[edittext,setEdittext]=useState('');
+
+const handleEdit =(tes)=>{
+    setEditid(tes.id);
+    setEdittext(tes.txt);
+}
+
+const handleUpdate = (id)=>{
+    const update =tests.map(tes=>{
+        if(tes.id===id){
+            return {...tes,txt:edittext}
+        }
+    return tes;
+    })
+    
+    setTests(update);
+    setEditid(null);
+}
+
 
 const Addtext=(event)=>{
  event.preventDefault();
@@ -23,8 +43,6 @@ setTests([...tests,addnewtext]);
 setNewtests('');
 
 }
-
-
 
     return(<div>
         <div style={{marginTop:"30px"}} >
@@ -40,7 +58,24 @@ setNewtests('');
         </div>
 <ul>
     {tests.map(tes=>(
-        <li key={tes.id}>{tes.txt}</li>
+        <li key={tes.id}>{
+editid===tes.id ? (
+<>
+    <input
+    type="text"
+    value={edittext}
+    onChange={(e)=>setEdittext(e.target.value)}
+    />
+    <button onClick={() => handleUpdate(tes.id)}>შენახვა</button>
+</> )
+
+   : (
+              <>
+                {tes.txt}
+                <button onClick={() => handleEdit(tes)}>რედაქტირება</button>
+              </>
+            )}
+        </li>
     ))}
 </ul>
     </div>)

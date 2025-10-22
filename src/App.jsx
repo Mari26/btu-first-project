@@ -1,11 +1,11 @@
 
 import './App.css'
-import { Routes, Route, Link } from 'react-router-dom';
-import UserList from './lesson-14/UserList';
-import UserDetails from './lesson-14/UserDetails';
-import AddUser from './lesson-14/AddUser';
-import UserEdit from './lesson-14/UserEdit';
-import Test from './lesson-14/Test';
+// import { Routes, Route, Link } from 'react-router-dom';
+// import UserList from './lesson-14/UserList';
+// import UserDetails from './lesson-14/UserDetails';
+// import AddUser from './lesson-14/AddUser';
+// import UserEdit from './lesson-14/UserEdit';
+// import Test from './lesson-14/Test';
 // import React, { useState } from 'react';
 // import Greeting from './Greeting';
 // import Home from './lesson-13/Home';
@@ -52,7 +52,11 @@ import Test from './lesson-14/Test';
 // import TrafficLight from './lesson-12/TrafficLight';
 // import ScrollPosition from './lesson-12/ScrollPosition';
 // import Statesto from './component-2/Satesto';
+import ThemeProvider  from './contexts/ThemeContext';
 
+import ThemeTogglerButton from './lesson-15/ThemeTogglerButton';
+import ContentDisplay from './lesson-15/ContentDisplay';
+ 
 function App() {
 // let age = 34;
 // const arr=["Apple", "Banana", "Orange"];
@@ -187,7 +191,7 @@ function App() {
          <Route path="info" element={<ProfileInfo />} />
          <Route path="settings" element={<ProfileSettings />} />
       </Routes> */}
-<nav>
+{/* <nav>
   <Link to="/">მთავარი| </Link>
   <Link to="/users"> მომხმარებლები |</Link>
   <Link to="/add-user"> ახალისდამატება </Link>
@@ -200,8 +204,17 @@ function App() {
   <Route path='add-user' element={<AddUser/>}/>
   <Route path="/users/:id/edit" element={<UserEdit />} /> 
   <Route path='/Test' element={<Test/>}/>
-</Routes>
+</Routes> */}
 
+<ThemeProvider>
+      <div style={{ padding: '20px', textAlign: 'center' }}>
+        <h1>React თემის გადამრთველი (Context API)</h1>
+        <p>დააჭირე ღილაკს თემის შესაცვლელად.</p>
+        <br />
+        <ThemeTogglerButton />
+        <ContentDisplay />
+      </div>
+    </ThemeProvider>
 </div>
   
   
