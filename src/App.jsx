@@ -55,11 +55,12 @@ const { addNotification } = useNotification();
           <hr />
           <Cart /> 
         </main>
-        <div className="App" style={{ padding: '20px' }}>
+        <div style={{ padding: '20px' }}>
       
       <NotificationContainer />
 
-      <h1>შეტყობინებების სისტემა</h1>
+      <h1 style={{ padding: '10px' }}>შეტყობინებების სისტემა</h1>
+
       <button onClick={showSuccess} style={{ background: '#4CAF50', color: 'white', marginRight: '10px' }}>
         აჩვენე Success
       </button>

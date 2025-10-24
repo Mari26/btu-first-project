@@ -41,6 +41,8 @@ export const NotificationProvider = ({ children }) => {
 };
 
 // დამხმარე Hook-ი ასე ჯობიაო დაგუგვლისას, მარა აშკარად ჩემს ედიტორს არვიცი არმოწმონს :()
+
+// eslint-disable-next-line react-refresh/only-export-components
 export const useNotification = () => {
   return useContext(NotificationContext);
 };

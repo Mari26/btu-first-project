@@ -22,13 +22,13 @@ const Cart = () => {
         <div key={item.id} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #ddd', padding: '10px 0' }}>
           <span>{item.name} (x{item.quantity}) - {item.price * item.quantity} ₾</span>
           <div>
-            <button onClick={() => addItem(item)} style={{ marginRight: '5px' }}>+</button>
-            <button onClick={() => removeItem(item.id)} style={{ marginRight: '5px' }}>-</button>
+            <button onClick={() => addItem(item)} style={{ marginRight: '5px',backgroundColor:"green",width:"20px" }}> + </button>
+            <button onClick={() => removeItem(item.id)} style={{ marginRight: '5px',backgroundColor:"red",width:"20px"}}> - </button>
           </div>
         </div>
       ))}
       <h4>ჯამური ფასი: {totalPrice} ₾</h4>
-      <button onClick={clearCart} style={{ background: 'red', color: 'white' }}>
+      <button onClick={clearCart} style={{ background: 'red', color: 'white',marginTop: '5px' }}>
         კალათის გასუფთავება
       </button>
     </div>
