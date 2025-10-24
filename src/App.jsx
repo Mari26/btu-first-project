@@ -1,212 +1,82 @@
 
 import './App.css'
-// import { Routes, Route, Link } from 'react-router-dom';
-// import UserList from './lesson-14/UserList';
-// import UserDetails from './lesson-14/UserDetails';
-// import AddUser from './lesson-14/AddUser';
-// import UserEdit from './lesson-14/UserEdit';
-// import Test from './lesson-14/Test';
-// import React, { useState } from 'react';
-// import Greeting from './Greeting';
-// import Home from './lesson-13/Home';
-// import About from './lesson-13/About';
-// import Contact from './lesson-13/Contact';
-// import ProductPage from './lesson-13/ProductPage';
-// import NotFoundPage from './lesson-13/NotFoundPage';
-// import PhotoListPage from './lesson-13/PhotoListPage';
-// import PhotoDetailPage from './lesson-13/PhotoDetailPage';
-// import ProtectedRoute from './lesson-13/ProtectedRoute';
-// import DashboardPage from './lesson-13/DashboardPage ';
-// import LoginPage from './lesson-13/LoginPage';
-// import ProfileInfo from './lesson-13/ProfileInfo';
-// import ProfilePage from './lesson-13/ProfilePage ';
-// import ProfileSettings from './lesson-13/ProfileSettings';
-// import First from './First';
-// import User from './User';
-// import Product from './Product';
-// import Header from './Header';
-// import Content from './Content';
-// import Footer from './Footer';
-// import Avatar from './Avatar';
-// import CustomButton from './CustomButton';
-// import Article from './Article';
-// import List from './List';
-// import Status from './Status';
-// import Profile from './Profile';
-// import Button from './Button';
-// import Profile from './components/Profile';
-// import Modal from './components/Modal';
-// import Card from './lesson-10/card';
-// import Listt from './lesson-10/Listt';
-// import StatusMessage from './lesson-10/StatusMessage';
-// import ColorButton from './lesson-10/ColorButton';
-// import Alert from './lesson-10/Alert';
-// import State from './component-2/State';
-// import Count from './lesson-11/Count';
-// import Divstyle from './lesson-11/Divstyle';
-// import Inputstyle from './lesson-11/Inputstyle';
-// import ClickCounter from './lesson-11/ClickCounter';
-// import Timer from './lesson-12/Timer';
-// import UserList from './lesson-12/UserList';
-// import FocusComponent from './lesson-12/FocusComponent';
-// import TrafficLight from './lesson-12/TrafficLight';
-// import ScrollPosition from './lesson-12/ScrollPosition';
-// import Statesto from './component-2/Satesto';
-import ThemeProvider  from './contexts/ThemeContext';
 
-import ThemeTogglerButton from './lesson-15/ThemeTogglerButton';
-import ContentDisplay from './lesson-15/ContentDisplay';
+// import ThemeProvider from './contexts/ThemeContext';
+
+// import ThemeTogglerButton from './lesson-15/ThemeTogglerButton';
+// import ContentDisplay from './lesson-15/ContentDisplay';
+import { CartProvider } from './context/CartContext';
+import Header from './lesson-15/Header';
+import ProductList from './lesson-15/ProductList';
+import Cart from './lesson-15/Cart';
  
+import { useAuth } from './context/AuthContext';
+import Login from './lesson-15/Login';
+import Welcome from './lesson-15/Welcome';
+
+import { useNotification } from './context/NotificationContext';
+import NotificationContainer from './lesson-15/NotificationContainer';
+
+
 function App() {
-// let age = 34;
-// const arr=["Apple", "Banana", "Orange"];
-// let txt =  "Hello React"
-// let isStudent = true;
-// let agee = 18;
-// let PrL=["React", "Angular", "Vue"];
-//  const fruits = ['ვაშლი', 'მსხალი', 'ატამი', 'ბანანი'];
-// const [isAuthenticated] = useState(false);
+const { user } = useAuth();
+
+const { addNotification } = useNotification();
+
+  const showSuccess = () => {
+    addNotification({
+      type: 'success',
+      message: 'ოპერაცია წარმატებით დასრულდა!'
+    });
+  };
+
+  const showError = () => {
+    addNotification({
+      type: 'error',
+      message: 'დაფიქსირდა შეცდომა.'
+    });
+  };
+
+  const showInfo = () => {
+    addNotification({
+      type: 'info',
+      message: 'ეს არის საინფორმაციო შეტყობინება.'
+    });
+  };
   return (
 <div>
- {/* <h1>"hello React!"</h1>  
- <p>ჩემი ასაკი არის {age}</p>  
-<h2 style={{color:"blue"}}>{txt}</h2>
-<div>
-  {isStudent?<p>გამარჯობა სტუდენტო!</p>:<p>კეთილი იყოს შენი მობრძანებ!</p>}
-</div>
-<ul>{arr.map((item)=>(
-  <li>{item}</li>
-))}</ul>
-  <p>
-        {agee > 18 ? 'შენ ხარ სრულწლოვანი' : 'შენ ხარ არასრულწლოვანი'}
-  </p>
 
+<CartProvider>
+      <div className="App">
+        {user ? <Welcome /> : <Login />}
+        <Header />
+        <main>
+          <ProductList />
+          <hr />
+          <Cart /> 
+        </main>
+        <div className="App" style={{ padding: '20px' }}>
+      
+      <NotificationContainer />
 
-{PrL.includes("React")? <p>React ნაპოვნია</p>:<p>React ვერ მოიძებნა</p>}
-
-
-
-
-<Greeting/>
-<First/>
-<User name="ნინო"  />
-<Product title="ლეპტოპი" price="2000₾"/>
-<Header/>
-<Content/>
-<Footer/>
-<Avatar url="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqEhN2Nk4_i8uc8QTunpCv_UAsEpJU2sFVTa2z8H6uFIruimJcpEreF7wJs7kqxiAjDUs&usqp=CAU"/>
-<CustomButton label="დაჭირე აქ"/>
-<Article title="სათაური" txt="დავწეროთ რაიმე ტექსტი" />
-<List items={["React", "JavaScript", "HTML"]}/>
-<Status online/>
-<Profile name="mari" isAdmin={true}/>
-<Button primary={true}/> */}
-
-{/* <Profile isAdmin={false}/>
-
-<Modal header="title" footer="footer" >
-  <p>text</p>
-  
-   </Modal> */}
-
-{/* //დაწერე კომპონენტი Card, რომელიც იღებს childrenს და აჩვენებს მას შიგნით. */}
-{/* 
-<Card> 
-   <h2>სათაური</h2>
-  <p>ეს არის ტექსტი</p>
-</Card>
-
-<Listt items={fruits} />
-<StatusMessage isOnline={true}/>
-<ColorButton label="წაშლა" color="red" />
- <Alert type="success">
-        <strong>შესანიშნავია!</strong> თქვენი პროფილი წარმატებით განახლდა.
-      </Alert> */}
-{/* <State /> */}
-{/* <Count/>
-<Divstyle/>
-<Inputstyle/> */}
- {/* <div>
-      <ClickCounter />
+      <h1>შეტყობინებების სისტემა</h1>
+      <button onClick={showSuccess} style={{ background: '#4CAF50', color: 'white', marginRight: '10px' }}>
+        აჩვენე Success
+      </button>
+      <button onClick={showError} style={{ background: '#f44336', color: 'white', marginRight: '10px' }}>
+        აჩვენე Error
+      </button>
+      <button onClick={showInfo} style={{ background: '#2196F3', color: 'white' }}>
+        აჩვენე Info
+      </button>
     </div>
+      </div>
+    </CartProvider>
 
 
-<Timer/>
 
-<UserList/>
- <FocusComponent />
-  <TrafficLight />
-<ScrollPosition/>
-<Statesto/> */}
- {/* <nav >
-        <ul style={{display:"flex", justifycontent: "spacearound"}}>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-          <li>
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li>
-            <Link to="/products/1">Product</Link>
-          </li>
-          <li>
-            <Link to="/PhotoListPage">PhotoListPage</Link>
-          </li>
-          <li>
-            <Link to="/dashboard">DashboardPage</Link>
-          </li>
-          <li>
-            <Link to="/Login">LoginPage</Link>
-          </li>
-          <li>
-            <Link to="/profile">profile</Link>
-          </li>
-          
-        </ul>
-      </nav>
 
-<hr/>
-
-  <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path='/products/:id' element={<ProductPage />}/>
-        <Route path="*" element={<NotFoundPage />} />
-        <Route path="/PhotoListPage" element={<PhotoListPage />} />
-        <Route path="/photos/:id" element={<PhotoDetailPage />} />
-         <Route path="/login" element={<LoginPage />} />
-          <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute isAuthenticated={isAuthenticated}>
-              <DashboardPage />
-            </ProtectedRoute>
-          }
-        />
-         <Route path="/profile" element={<ProfilePage />}/>
-         <Route path="info" element={<ProfileInfo />} />
-         <Route path="settings" element={<ProfileSettings />} />
-      </Routes> */}
-{/* <nav>
-  <Link to="/">მთავარი| </Link>
-  <Link to="/users"> მომხმარებლები |</Link>
-  <Link to="/add-user"> ახალისდამატება </Link>
-  <Link to="/Test"> |satesto</Link>
-</nav>
-<Routes>
-  <Route path='/users' element={<UserList/>}/>
-  <Route path='/users/:id' element={<UserDetails/>}/>
-  <Route path='/' element={<h1>მთავარი გვერდი</h1>}/>
-  <Route path='add-user' element={<AddUser/>}/>
-  <Route path="/users/:id/edit" element={<UserEdit />} /> 
-  <Route path='/Test' element={<Test/>}/>
-</Routes> */}
-
-<ThemeProvider>
+{/* <ThemeProvider>
       <div style={{ padding: '20px', textAlign: 'center' }}>
         <h1>React თემის გადამრთველი (Context API)</h1>
         <p>დააჭირე ღილაკს თემის შესაცვლელად.</p>
@@ -214,7 +84,7 @@ function App() {
         <ThemeTogglerButton />
         <ContentDisplay />
       </div>
-    </ThemeProvider>
+    </ThemeProvider> */}
 </div>
   
   

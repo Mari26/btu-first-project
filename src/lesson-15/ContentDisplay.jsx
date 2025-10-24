@@ -1,5 +1,5 @@
 import React from 'react';
-// 1. იმპორტის მისამართი შეიცვალა
+
 import { useTheme } from '../hooks/useTheme';
 
 const ContentDisplay = () => {
